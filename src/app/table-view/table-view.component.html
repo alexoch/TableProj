@@ -1,0 +1,27 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-light">
+    <ng-container *ngFor="let title of titlesArr">
+      <th *ngIf="filterStatus[title[0]]">{{title[1]}}</th>
+    </ng-container>
+    <th></th>
+    </thead>
+    <tbody class="tbody-light">
+    <tr *ngFor="let entry of entriesArr">
+      <ng-container *ngFor="let title of titlesArr">
+        <td *ngIf="filterStatus[title[0]]">
+          <ng-container [ngSwitch]="title[0]">
+            <ng-container *ngSwitchCase="'statusEntry'">
+              <app-cell-status title="{{filterStatus[title[1]]}}" entryVal="{{entry[title[0]]}}"></app-cell-status>
+            </ng-container>
+            <ng-container *ngSwitchDefault>
+              {{entry[title[0]]|missingData}}
+            </ng-container>
+          </ng-container>
+        </td>
+      </ng-container>
+      <td><a class="btn btn-outline-primary">Continue</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

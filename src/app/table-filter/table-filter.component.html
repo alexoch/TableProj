@@ -1,0 +1,12 @@
+<form [formGroup]="_myForm" class="row">
+  <ng-container *ngFor="let title of filtersTitles">
+    <ng-container *ngIf="title[2]">
+      <div class="col-md-2 col-6 form-check">
+        <input class="form-check-input" type="checkbox" value="" id="versionCheck" formControlName="{{title[0]}}">
+        <label class="form-check-label" for="versionCheck">
+          {{title[1]}}
+        </label>
+      </div>
+    </ng-container>
+  </ng-container>
+</form>

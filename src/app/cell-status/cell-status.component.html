@@ -1,0 +1,12 @@
+<ng-container [ngSwitch]="entryVal">
+  <span *ngSwitchCase="'Not finished'" class="text-danger">
+    {{entryVal|missingData}}
+  </span>
+  <span *ngSwitchCase="'Checking'" class="text-warning">
+    {{entryVal|missingData}}
+  </span>
+  <span *ngSwitchDefault>
+    {{entryVal|missingData}}
+  </span>
+
+</ng-container>

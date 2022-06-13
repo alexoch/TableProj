@@ -1,0 +1,8 @@
+.thead-light{
+  background-color: #fff;
+  color: #888888;
+}
+
+.tbody-light{
+  border-top: 1px #888888 solid;
+}
